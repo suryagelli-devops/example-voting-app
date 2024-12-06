@@ -4,7 +4,7 @@ pipeline {
         stage("code-checkout") {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/devops/example-voting-app.git'
+                    url: 'https://github.com/suryagelli-devops/example-voting-app.git'
             }
         }
         stage("code-quality-check") {
