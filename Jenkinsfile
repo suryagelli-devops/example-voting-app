@@ -8,12 +8,18 @@ pipeline {
             }
         }
         stage("install packages") {
-            steps {
-                dir('./result') {
+            dir('./result') {
+                steps {
                     sh '''
                         npm install
-                        npm run test
                     '''
+                }
+                stage("run test") {
+                    steps {
+                        sh '''
+                            npm run test
+                        '''
+                    }
                 }
             }
         }
